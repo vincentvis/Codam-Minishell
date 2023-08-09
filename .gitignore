@@ -50,3 +50,20 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+#dir with settings for debugging
+.vscode/
+
+# our minishell executable
+minishell
+# objects dir
+object_files/*
+
+#generated tree images
+*.dot
+*.jpg
+*.svg
+
+NM_OUT.log
+CALL_TREE_JSON.json
+pipex*

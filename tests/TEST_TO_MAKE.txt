@@ -1,0 +1,84 @@
+
+Something weird where multiple variables expanded form a valid variable again
+export PT1="hi $"
+export PT2="PT1 <dollarsign var"
+echo $PT1$PT2
+// should become: [hi $PT1 <dollarsign var]
+
+test:
+echo 2 | > file | wc
+note:
+behaves different in ZSH and in BASH
+
+- try to echo "-n" :) 
+- handling weird options, e.g. -nnnnnnnnnnn, echo "-n" -n "-n" -nn "-nn", ls -l"a"la"l"al"a"l"a"la
+		maybe we should handle echo with '--' option which indicates the end of options
+
+hehe: 
+echo test > test; cat test >> test 
+
+
+base64 < /dev/random | head -c 1000 | cat
+
+> file 
+
+<< $PWD 
+
+<< "in_quotes_delimeter"
+
+<Makefile cat >file | <<here cat
+
+bash-3.2$ <<hello <<hello2 cat
+> raz dwa
+> hello2
+> trzy
+> hello
+> cztery
+> hello2
+cztery
+
+//also try the above with pipes and heredoc 
+
+for cd: remove the directory you're in
+
+ <<here grep "hi" | |
+grep "hi" | <<here
+grep "hi" | 
+
+
+add initialise OLDPWD
+test: first command to run
+env (doesn't have OLDPWD)
+export (does, empty one)
+
+for variables:
+one with only IFS
+chain of empty variables both in quotes and as words
+
+
+
+SOMETHIGN WEIRD for heredoc with IO number
+
+2<<HERE non_existent_cmd
+--- this writes error message to the heredoc...
+1<<HERE non_existent_cmd
+--- this says something with "bad file descriptor"
+
+
+2147483648>4 // still creates the file. check with below and above max int
+-1>2 //seen as word
+
+
+exit | exit
+
+
+make an executable file called `ls` (or anyhting that is not a builtin):
+```bash
+#!/bin/bash
+echo HELLO
+```
+do:
+`unset PATH`
+do:
+`ls`
+expected to just print HELLO

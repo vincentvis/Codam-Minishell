@@ -1,0 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   minishell_debug.nonorm                             :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: vincent <vincent@student.codam.nl>           +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/09/24 15:20:56 by vvissche      #+#    #+#                 */
+/*   Updated: 2022/02/18 17:07:48 by jowytrzy      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef MINISHELL_DEBUG_H
+# define MINISHELL_DEBUG_H
+
+# include "ft_printf.h"
+# include "parser/parser.h"
+
+void	create_dotfile_from_ast(t_ast_node *tree);
+void	print_ast(const t_ast_node *tree, int indent, char *extra);
+void	print_tokens(const t_token *token);
+
+const char	*debug_token_type_from_enum(int type);
+const char	*debug_state_type_from_enum(int state);
+const char	*debug_status_code_from_enum(int status);
+
+#endif
